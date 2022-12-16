@@ -1,5 +1,5 @@
 
-# Random Block Cipher Java
+# Dynamic Block Cipher Java
 
 Block encryption algorithm developed in java with dynamic block cipher system, random passwords and large file encryption. Based on the AES system of random ciphers and block scrambling.
 
