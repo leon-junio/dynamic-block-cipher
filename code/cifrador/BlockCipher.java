@@ -2,6 +2,7 @@ package cifrador;
 
 /**
  * @author Leon Jr Martins Ferreira
+ * @version 1.2 - 16/12/2022
  */
 public class BlockCipher implements Cryptable {
 
@@ -24,14 +25,6 @@ public class BlockCipher implements Cryptable {
 
     @Override
     public String crypt(String base) {
-        /*
-         * System.out.println(base);
-         * System.out.println("base");
-         * for (char c : base.toCharArray()) {
-         * System.out.print((int) c + " - ");
-         * }
-         * System.out.println("");
-         */
         if (base != null && base.length() > 0 && !base.equals(" "))
             return blockEngine(base.toCharArray(), true);
         else
@@ -40,14 +33,6 @@ public class BlockCipher implements Cryptable {
 
     @Override
     public String decrypt(String base) {
-        /*
-         * System.out.println(base);
-         * System.out.println("base");
-         * for (char c : base.toCharArray()) {
-         * System.out.print((int) c + " - ");
-         * }
-         * System.out.println("");
-         */
         if (base != null && base.length() > 0 && !base.equals(" "))
             return blockEngine(base.toCharArray(), false);
         else
@@ -55,6 +40,7 @@ public class BlockCipher implements Cryptable {
     }
 
     /**
+     * Engine to start the block cipher on a text (each block use the last block as key to encrypt data)
      * Motor de criptografia baseada em blocos
      * Cada chave criada para criptografar é baseada no bloco anterior
      * É utilizada uma chave inicial padronizada que pode ser alterada
@@ -89,16 +75,6 @@ public class BlockCipher implements Cryptable {
                     key = Keygen.generateKey(data.length > BLOCK_SIZE ? BLOCK_SIZE : data.length, newkey, DEFAULT_KEY);
                 }
             } while (indexCipher < data.length);
-
-            /*
-             * printar resp
-             * System.out.println("resp");
-             * for (char c : resp) {
-             * System.out.print((int) c + " - ");
-             * }
-             * System.out.println("");
-             */
-
             cipherText = new String(resp);
             indexCipher = 0;
             return cipherText;
@@ -109,6 +85,7 @@ public class BlockCipher implements Cryptable {
     }
 
     /**
+     * Function to get a block dynamically inside a array of chars from text
      * Função para buscar blocos de tamanho dinamico dentro de um texto
      * 
      * @param data
