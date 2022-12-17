@@ -45,9 +45,9 @@ public class BlockCipher implements Cryptable {
      * Cada chave criada para criptografar é baseada no bloco anterior
      * É utilizada uma chave inicial padronizada que pode ser alterada
      * 
-     * @param data    mensagem para ser criptografada
-     * @param isCrypt true - Se for criptografia false - se for descriptografia
-     * @return Uma string total criptografada
+     * @param data mensagem para ser criptografada - text to be encrypted
+     * @param isCrypt true - Se for criptografia (encrypt) false - se for descriptografia (decrypt)
+     * @return Uma string total criptografada - String of text base (encrypted or decrypted)
      */
     private String blockEngine(char[] data, boolean isCrypt) {
         try {
@@ -88,8 +88,8 @@ public class BlockCipher implements Cryptable {
      * Function to get a block dynamically inside a array of chars from text
      * Função para buscar blocos de tamanho dinamico dentro de um texto
      * 
-     * @param data
-     * @return Um bloco de byte contendo informações para criptografar
+     * @param data the line of text actually in process of block cipher
+     * @return Um bloco de byte contendo informações para criptografar/descriptografar - return block of bytes of data to encrypt/decrypt
      */
     private char[] getBlock(char[] data) throws Exception {
         int rows = BLOCK_SIZE;
