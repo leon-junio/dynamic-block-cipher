@@ -6,12 +6,13 @@ package cifrador;
 public class Keygen {
 
     /**
+     * Function to return a bitstream using seed or block as key
      * Função para gerar bitstream de dados a partir de uma seed
      * 
-     * @param size tamanho do bloco alocado no momento
-     * @param seed String alvo para virar um bitstream
-     * @param pass Uma senha para ajudar na formação aleatoria do bitStream
-     * @return uma chave em formato de byte
+     * @param size tamanho do bloco alocado no momento - size of block
+     * @param seed String alvo para virar um bitstream - String of text or block
+     * @param pass Uma senha para ajudar na formação aleatoria do bitStream - The password to encrypt seed
+     * @return uma chave em formato de byte - return a key for use in blockCipher methods
      */
     protected static char[] generateKey(int size, String seed, String pass) throws Exception {
         char[] key = new char[size];
