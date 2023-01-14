@@ -1,11 +1,15 @@
 package test;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import cifrador.BlockCipher;
 
-public class Teste {
+public class Test {
     public static void main(String[] args) {
         try {
             long inic = 0, fim = 0;
