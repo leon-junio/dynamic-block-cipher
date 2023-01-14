@@ -3,7 +3,7 @@ package cifrador;
 /**
  * @author Leon Jr Martins Ferreira
  */
-public class Keygen {
+public final class Keygen {
 
     /**
      * Function to return a bitstream using seed or block as key
