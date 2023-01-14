@@ -2,14 +2,14 @@ package cifrador;
 
 /**
  * @author Leon Jr Martins Ferreira
- * @version 1.2 - 16/12/2022
+ * @version 1.3 - 14/01/2023
  */
 public class BlockCipher implements Cryptable {
 
     public static final int BLOCK_SIZE = 6; // 6 Bytes
     public static String DEFAULT_KEY;
     private int indexCipher = 0;
-    private static final String VI = "_asdqwe123456*.*";
+    private static final String VI = "_asdqwe123456*.*"; //start array
 
     public void setKey(String key) {
         DEFAULT_KEY = key;
@@ -40,14 +40,17 @@ public class BlockCipher implements Cryptable {
     }
 
     /**
-     * Engine to start the block cipher on a text (each block use the last block as key to encrypt data)
+     * Engine to start the block cipher on a text (each block use the last block as
+     * key to encrypt data)
      * Motor de criptografia baseada em blocos
      * Cada chave criada para criptografar é baseada no bloco anterior
      * É utilizada uma chave inicial padronizada que pode ser alterada
      * 
-     * @param data mensagem para ser criptografada - text to be encrypted
-     * @param isCrypt true - Se for criptografia (encrypt) false - se for descriptografia (decrypt)
-     * @return Uma string total criptografada - String of text base (encrypted or decrypted)
+     * @param data    mensagem para ser criptografada - text to be encrypted
+     * @param isCrypt true - Se for criptografia (encrypt) false - se for
+     *                descriptografia (decrypt)
+     * @return Uma string total criptografada - String of text base (encrypted or
+     *         decrypted)
      */
     private String blockEngine(char[] data, boolean isCrypt) {
         try {
@@ -89,7 +92,9 @@ public class BlockCipher implements Cryptable {
      * Função para buscar blocos de tamanho dinamico dentro de um texto
      * 
      * @param data the line of text actually in process of block cipher
-     * @return Um bloco de byte contendo informações para criptografar/descriptografar - return block of bytes of data to encrypt/decrypt
+     * @return Um bloco de byte contendo informações para
+     *         criptografar/descriptografar - return block of bytes of data to
+     *         encrypt/decrypt
      */
     private char[] getBlock(char[] data) throws Exception {
         int rows = BLOCK_SIZE;
